@@ -1,5 +1,3 @@
-// const pg = require('pg');
-
 const settings = require('./settings'); // settings.json
 
 const options = {
@@ -17,7 +15,7 @@ const knex = require('knex')(options);
 
 const data = process.argv.slice(2)[0];
 
-knex.select('*').from('famous_people')
+knex('famous_people')
     .where({
         first_name: data 
     })
